@@ -1,0 +1,30 @@
+{
+    "name": "clearRead",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "清爽模式阅去除广告读新闻页面",
+    "icons" : {
+        "16" : "icon.png",
+        "48" : "icon.png",
+        "128" : "icon.png"
+    },
+    "browser_action": {
+        "default_title": "clearRead",
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*", "file://*"],
+            "css": ["style/content.css"],
+            "js": ["js/contentScript.js"]
+        }
+    ],
+    "permissions": [
+        "cookies",
+        "notifications"
+    ]
+}
