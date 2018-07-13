@@ -21,6 +21,7 @@ class ClearRead {
         div.setAttribute('class', 'clearread-mode');
         div.innerHTML = this.tpl;
         document.body.appendChild(div);
+        document.body.style.overflow = 'hidden';
         let imgs = div.getElementsByTagName('img');
         let areaWidth = document.getElementById('clearReadCenterArea').clientWidth;
         for(let i = 0; i < imgs.length; i++) {
@@ -53,6 +54,7 @@ class ClearRead {
         setTimeout(() => {
             clearRead.setAttribute('class', 'clearread-mode');
             setTimeout(() => {
+                document.body.style.overflow = '';
                 let parentNode = clearRead.parentNode;
                 parentNode.removeChild(clearRead);
                 this.active = false;

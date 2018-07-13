@@ -10,6 +10,17 @@
     overflow-y: scroll;
     padding-top: 1px;
     transition: opacity 250ms ease-out;
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: #f0f0f0;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #c7c7c7;
+    }
     .center-area{
         width: 70%;
         max-width: 1000px;
@@ -44,8 +55,8 @@
             padding: 53px 70px;
             .title{
                 font-weight: bold;
-                font-size: 2.6em;
-                line-height: 1.2;
+                font-size: 32px;
+                line-height: 1.4;
                 margin-top: 0;
                 margin-bottom: 0.35em;
                 color: #333;
@@ -74,30 +85,34 @@
                     width: 100%;
                     word-break: break-all;
                     margin: 18px 0px;
-                    font-size: 1.4em;
+                    font-size: 18px;
                     line-height: 1.8;
                     color: #333;
+                    text-align: left!important;
                 }
                 ul, ol{
                     margin: 0 1em;
                     padding: 0 1em;
                     li{
                         color: #A6A6A6;
-                        font-size: 1.2em;
+                        font-size: 18px;
                         line-height: 1.8;
                         margin: 10px 0px;
+                        text-align: left!important;
                     }
                 }
                 ol{
                     list-style: decimal!important;
                     li{
                         list-style: decimal!important;
+                        text-align: left!important;
                     }
                 }
                 ul{
                     list-style: disc!important;
                     li{
                         list-style: disc!important;
+                        text-align: left!important;
                     }
                 }
                 blockquote{
@@ -106,7 +121,8 @@
                     margin-left: 19px;
                     padding: 10px 20px;
                     p{
-                        font-size: 1.3em;
+                        font-size: 18px;
+                        text-align: left!important;
                     }
                 }
                 img{
@@ -124,9 +140,19 @@
                     width: 100%;
                     word-break: break-all;
                     margin: 18px 0px;
-                    font-size: 1.6em;
+                    font-size: 19px;
                     line-height: 1.8;
                     color: #333;
+                    text-align: left!important;
+                }
+                h4,h5,h6 {
+                    width: 100%;
+                    word-break: break-all;
+                    margin: 18px 0px;
+                    font-size: 18px;
+                    line-height: 1.8;
+                    color: #333;
+                    text-align: left!important;
                 }
                 a{
                     color: #3986FF;
