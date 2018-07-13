@@ -23,7 +23,7 @@
     <div class="hot-key">
         <h3>快捷键设置</h3>
         <ul class="demo-list-item mdl-list">
-            <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect">
+            <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect show-modal">
                 <span class="mdl-list__item-primary-content">
                   打开阅读(Shift+Enter)
                 </span>
@@ -37,7 +37,24 @@
             </li>
         </ul>
     </div>
+    <div class="hot-key-dialog">
+        <div class="hot-key-set">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1">
+                <label class="mdl-textfield__label" for="sample1">按下要绑定的快捷键</label>
+            </div>
+            <div class="actions">
+                <button id="dialogCancel" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+                    取消
+                </button>
+                <button id="dialogConfirm" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+                    确认
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 <script rel="script" src="./mdl/material.min.js"></script>
+<script rel="script" src="./js/popup.js"></script>
 </body>
 </html>
