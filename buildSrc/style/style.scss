@@ -96,6 +96,9 @@ body{
             font-weight: bold;
             color: #999;
             font-size: 24px;
+            background: linear-gradient(to bottom, #333, #999);
+            -webkit-background-clip: text;
+            color: transparent;
         }
     }
     .open-state{
@@ -109,7 +112,7 @@ body{
             width: 120px;
         }
         .mdl-switch{
-            width: 40px;
+            width: 30px;
         }
     }
     .hot-key{

@@ -80,7 +80,10 @@ body {
     .popup-wrap .logo span {
       font-weight: bold;
       color: #999;
-      font-size: 24px; }
+      font-size: 24px;
+      background: linear-gradient(to bottom, #333, #999);
+      -webkit-background-clip: text;
+      color: transparent; }
   .popup-wrap .open-state {
     width: 100%;
     padding: 0px 20px;
@@ -91,7 +94,7 @@ body {
     .popup-wrap .open-state .label {
       width: 120px; }
     .popup-wrap .open-state .mdl-switch {
-      width: 40px; }
+      width: 30px; }
   .popup-wrap .hot-key {
     width: 100%; }
     .popup-wrap .hot-key h3 {

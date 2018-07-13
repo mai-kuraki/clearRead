@@ -73,6 +73,13 @@
       .clearread-mode .center-area .article .content {
         width: 100%;
         margin-top: 50px; }
+        .clearread-mode .center-area .article .content div {
+          width: auto !important;
+          float: none !important;
+          padding: 0px !important;
+          margin: 0px !important;
+          overflow: auto !important;
+          line-height: normal !important; }
         .clearread-mode .center-area .article .content p {
           width: 100%;
           word-break: break-all;
