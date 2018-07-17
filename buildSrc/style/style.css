@@ -123,7 +123,8 @@ body {
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.25);
-    z-index: 99; }
+    z-index: 99;
+    display: none; }
   .popup-wrap .hot-key-set {
     width: 100%;
     padding: 20px;

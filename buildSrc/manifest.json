@@ -24,7 +24,6 @@
         }
     ],
     "permissions": [
-        "cookies",
-        "notifications"
+        "storage"
     ]
 }

@@ -23,15 +23,15 @@
     <div class="hot-key">
         <h3>快捷键设置</h3>
         <ul class="demo-list-item mdl-list">
-            <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect show-modal">
+            <li id="editOpen" class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect show-modal">
                 <span class="mdl-list__item-primary-content">
-                  打开阅读(Shift+Enter)
+                  打开阅读<span id="openLabel"></span>
                 </span>
                 <i class="iconfont icon-shezhi"></i>
             </li>
-            <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect">
+            <li id="editClose" class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect">
                 <span class="mdl-list__item-primary-content">
-                  关闭阅读(Esc)
+                  关闭阅读<span id="closeLabel"></span>
                 </span>
                 <i class="iconfont icon-shezhi"></i>
             </li>
@@ -39,9 +39,9 @@
     </div>
     <div class="hot-key-dialog">
         <div class="hot-key-set">
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="sample1">
-                <label class="mdl-textfield__label" for="sample1">按下要绑定的快捷键</label>
+            <div id="hotkeyWrap" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="hotkey">
+                <label class="mdl-textfield__label" for="hotkey">按下要绑定的快捷键</label>
             </div>
             <div class="actions">
                 <button id="dialogCancel" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
@@ -52,6 +52,10 @@
                 </button>
             </div>
         </div>
+    </div>
+    <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
     </div>
 </div>
 <script rel="script" src="./mdl/material.min.js"></script>

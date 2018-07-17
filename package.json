@@ -19,6 +19,7 @@
     "grunt-browserify": "^5.3.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-crx": "^1.0.5",
+    "keycode": "^2.2.0",
     "load-grunt-tasks": "^4.0.0"
   }
 }

@@ -3,10 +3,12 @@ class ClearRead {
     constructor() {
         this.tpl = null;
         this.active = false;
+        this.hotkeys = [];
         this.addEvents();
     }
 
     addReadPage() {
+        if(this.active) return;
         if(!this.tpl) {
             let article = new Readability(document).parse();
             this.tpl = `<div class="center-area" id="clearReadCenterArea">
@@ -48,6 +50,7 @@ class ClearRead {
     }
 
     removeReadPage() {
+        if(!this.active) return;
         let clearRead = document.getElementById('clearRead');
         let clearReadCenterArea = document.getElementById('clearReadCenterArea');
         clearReadCenterArea.setAttribute('class', 'center-area');
@@ -64,17 +67,36 @@ class ClearRead {
 
     addEvents() {
         document.addEventListener('keydown', (e) => {
-            if (e.shiftKey && e.keyCode == 13) {
-                console.log(this.active);
-                if(!this.active) {
-                    this.addReadPage();
-                }
-            }else if(e.keyCode == 27) {
-                console.log(this.active);
-                if(this.active) {
-                    this.removeReadPage();
-                }
+            let code = e.keyCode;
+            if(this.hotkeys.indexOf(code) == -1) {
+                this.hotkeys.push(code);
             }
+        });
+        document.addEventListener('keyup', (e) => {
+            chrome.storage.sync.get((data) => {
+                if(data.hasOwnProperty('state') && data.state == 'close') return;
+                if(data.hasOwnProperty('open')) {
+                    let openkeys = data.open;
+                    if(JSON.stringify(this.hotkeys) == JSON.stringify(openkeys)) {
+                        this.addReadPage();
+                    }
+                }else {
+                    if (e.shiftKey && e.keyCode == 13) {
+                        this.addReadPage();
+                    }
+                }
+                if(data.hasOwnProperty('close')) {
+                    let closekeys = data.close;
+                    if(JSON.stringify(this.hotkeys) == JSON.stringify(closekeys)) {
+                        this.removeReadPage();
+                    }
+                }else {
+                    if(e.keyCode == 27) {
+                        this.removeReadPage();
+                    }
+                }
+                this.hotkeys = [];
+            });
         });
     }
 }
