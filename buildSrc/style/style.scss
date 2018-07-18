@@ -110,7 +110,7 @@ body{
         height: 36px;
         align-items: center;
         .label{
-            width: 120px;
+            width: 136px;
         }
         .mdl-switch{
             width: 30px;
@@ -136,6 +136,13 @@ body{
                 }
                 i{
                     color: #999;
+                }
+                .keylabel{
+                    margin-left: 8px;
+                    background: #EEE;
+                    padding: 4px 6px;
+                    border-radius: 4px;
+                    font-weight: bold;
                 }
             }
         }

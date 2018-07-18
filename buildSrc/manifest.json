@@ -1,8 +1,8 @@
 {
     "name": "clearRead",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 2,
-    "description": "清爽模式阅去除广告读新闻页面",
+    "description": "Extract the body of the article, remove the advertisement, and improve the reading experience.",
     "icons" : {
         "16" : "icon.png",
         "48" : "icon.png",

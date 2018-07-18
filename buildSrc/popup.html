@@ -14,24 +14,24 @@
         <span>ClearRead</span>
     </div>
     <div class="open-state">
-        <label class="label">开启clearRead</label>
+        <label class="label">enable ClearRead</label>
         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="isOpen">
             <input type="checkbox" id="isOpen" class="mdl-switch__input" checked>
             <span class="mdl-switch__label"></span>
         </label>
     </div>
     <div class="hot-key">
-        <h3>快捷键设置</h3>
+        <h3>hotkey settings</h3>
         <ul class="demo-list-item mdl-list">
             <li id="editOpen" class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect show-modal">
                 <span class="mdl-list__item-primary-content">
-                  打开阅读<span id="openLabel"></span>
+                  open <span class="keylabel" id="openLabel"></span>
                 </span>
                 <i class="iconfont icon-shezhi"></i>
             </li>
             <li id="editClose" class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect">
                 <span class="mdl-list__item-primary-content">
-                  关闭阅读<span id="closeLabel"></span>
+                  exit <span class="keylabel" id="closeLabel"></span>
                 </span>
                 <i class="iconfont icon-shezhi"></i>
             </li>
@@ -41,14 +41,14 @@
         <div class="hot-key-set">
             <div id="hotkeyWrap" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="hotkey">
-                <label class="mdl-textfield__label" for="hotkey">按下要绑定的快捷键</label>
+                <label class="mdl-textfield__label" for="hotkey">press the hotkey to bind</label>
             </div>
             <div class="actions">
                 <button id="dialogCancel" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
-                    取消
+                    CANCEL
                 </button>
                 <button id="dialogConfirm" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
-                    确认
+                    CONFIRM
                 </button>
             </div>
         </div>

@@ -93,7 +93,7 @@ body {
     height: 36px;
     align-items: center; }
     .popup-wrap .open-state .label {
-      width: 120px; }
+      width: 136px; }
     .popup-wrap .open-state .mdl-switch {
       width: 30px; }
   .popup-wrap .hot-key {
@@ -113,6 +113,12 @@ body {
         text-transform: none !important; }
       .popup-wrap .hot-key ul li i {
         color: #999; }
+      .popup-wrap .hot-key ul li .keylabel {
+        margin-left: 8px;
+        background: #EEE;
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-weight: bold; }
   .popup-wrap .hot-key-dialog {
     width: 100%;
     height: 100%;

@@ -41,7 +41,7 @@ const addEvents = () => {
         let state = e.target.checked?'open':'close';
         chrome.storage.sync.set({state: state}, () => {
             switchState();
-            snackbar(`ClearRead${e.target.checked?'开启':'关闭'}成功!`);
+            snackbar(`ClearRead ${e.target.checked?'enable':'disable'} success!`);
         });
     });
 };
@@ -54,11 +54,11 @@ const keyToName = () => {
 };
 
 const keyToLabel = (keys) => {
-    let keyNames = `(`;
+    let keyNames = ``;
     keys.map((data, k) => {
         keyNames += `${keycode.names[data]}${k < (keys.length - 1)?'+':''}`;
     });
-    keyNames += `)`;
+
     return keyNames;
 };
 
@@ -67,7 +67,7 @@ const saveHotKey = () => {
     obj[editType] = hotkeys;
     chrome.storage.sync.set(obj, () => {
         initSetLabel();
-        snackbar('快捷键修改成功!');
+        snackbar('The hotkey was successfully modified!');
     });
 };
 
@@ -98,7 +98,7 @@ const initSetLabel = () => {
             let label = keyToLabel(data.open);
             document.getElementById('openLabel').innerText = label;
         }else {
-            document.getElementById('openLabel').innerText = `(shift+enter)`;
+            document.getElementById('openLabel').innerText = `shift+enter`;
         }
     });
     chrome.storage.sync.get('close', (data) => {
@@ -106,7 +106,7 @@ const initSetLabel = () => {
             let label = keyToLabel(data.close);
             document.getElementById('closeLabel').innerText = label;
         }else {
-            document.getElementById('closeLabel').innerText = `(esc)`;
+            document.getElementById('closeLabel').innerText = `esc`;
         }
     });
 };
