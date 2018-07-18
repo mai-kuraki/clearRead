@@ -10,7 +10,7 @@ class ClearRead {
     addReadPage() {
         if(this.active) return;
         if(!this.tpl) {
-            let article = new Readability(document).parse();
+            let article = new Readability(document.cloneNode(true)).parse();
             let reg = /data-(\w*)src/g;
             let content = article.content.replace(reg, 'src');
             this.tpl = `<div class="center-area" id="clearReadCenterArea">

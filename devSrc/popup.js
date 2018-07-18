@@ -58,7 +58,6 @@ const keyToLabel = (keys) => {
     keys.map((data, k) => {
         keyNames += `${keycode.names[data]}${k < (keys.length - 1)?'+':''}`;
     });
-
     return keyNames;
 };
 
