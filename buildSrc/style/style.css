@@ -137,4 +137,8 @@ body {
       .popup-wrap .hot-key-set .actions button {
         margin-left: 12px; }
 
+.popup-disable {
+  filter: grayscale(1);
+  opacity: 0.5; }
+
 /*# sourceMappingURL=style.css.map */

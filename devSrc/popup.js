@@ -41,6 +41,7 @@ const addEvents = () => {
         let state = e.target.checked?'open':'close';
         chrome.storage.sync.set({state: state}, () => {
             switchState();
+            snackbar(`ClearRead${e.target.checked?'开启':'关闭'}成功!`);
         });
     });
 };
@@ -66,10 +67,14 @@ const saveHotKey = () => {
     obj[editType] = hotkeys;
     chrome.storage.sync.set(obj, () => {
         initSetLabel();
-        let snackbarContainer = document.querySelector('#toast');
-        let data = {message: `修改成功, 刷新页面后生效!`};
-        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+        snackbar('快捷键修改成功!');
     });
+};
+
+const snackbar = (msg) => {
+    let snackbarContainer = document.querySelector('#toast');
+    let data = {message: msg};
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
 };
 
 const openDialog = () => {
@@ -105,15 +110,41 @@ const initSetLabel = () => {
         }
     });
 };
-const switchState = () => {
+const switchState = (init) => {
     chrome.storage.sync.get('state', (data) => {
         if(data.hasOwnProperty('state')) {
             sysState = data.state;
         }else {
             sysState = 'open';
         }
+        let wrap = document.getElementsByClassName('popup-wrap')[0];
+        if(sysState == 'open') {
+            chrome.browserAction.setIcon({
+                path: 'icon.png'
+            }, () => {});
+            wrap.setAttribute('class', `popup-wrap`);
+        }else {
+            chrome.browserAction.setIcon({
+                path: 'icon_gray.png'
+            }, () => {});
+            wrap.setAttribute('class', `popup-wrap popup-disable`);
+        }
+        if(init) {
+            let switchEl = document.getElementsByClassName('mdl-switch')[0];
+            let classNames = switchEl.className;
+            if(sysState == 'open') {
+                if(classNames.indexOf('is-checked') == -1) {
+                    switchEl.setAttribute('class', `${classNames} is-checked`);
+                }
+            }else {
+                if(classNames.indexOf('is-checked') > -1) {
+                    switchEl.setAttribute('class', `${classNames.replace('is-checked', '')}`);
+                }
+            }
+            document.getElementById('isOpen').checked = (sysState == 'open')?true:false;
+        }
     });
 };
-switchState();
+switchState(true);
 addEvents();
 initSetLabel();

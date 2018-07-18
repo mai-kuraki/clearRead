@@ -11,10 +11,12 @@ class ClearRead {
         if(this.active) return;
         if(!this.tpl) {
             let article = new Readability(document).parse();
+            let reg = /data-(\w*)src/g;
+            let content = article.content.replace(reg, 'src');
             this.tpl = `<div class="center-area" id="clearReadCenterArea">
                             <div class="article">
                                 <h1 class="title">${article.title}</h1>
-                                <div class="content">${article.content}</div>
+                                <div class="content">${content}</div>
                             </div>
                         </div>`;
         }
@@ -66,6 +68,14 @@ class ClearRead {
     }
 
     addEvents() {
+        document.addEventListener('click', (e) => {
+            if(e.target.id === 'clearRead') {
+                let classNames = e.target.className;
+                if(classNames.indexOf('clearread-mode-show') > -1) {
+                    this.removeReadPage();
+                }
+            }
+        });
         document.addEventListener('keydown', (e) => {
             let code = e.keyCode;
             if(this.hotkeys.indexOf(code) == -1) {
