@@ -1,6 +1,6 @@
 {
     "name": "clearRead",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "manifest_version": 2,
     "description": "Extract the body of the article, remove the advertisement, and improve the reading experience.",
     "icons" : {
@@ -12,9 +12,6 @@
         "default_title": "clearRead",
         "default_icon": "icon.png",
         "default_popup": "popup.html"
-    },
-    "background": {
-        "scripts": ["js/background.js"]
     },
     "content_scripts": [
         {
